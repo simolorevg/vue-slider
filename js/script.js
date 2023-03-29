@@ -3,6 +3,8 @@ createApp({
     data(){
         return {
             showedImg : 0,
+            carousel: null,
+            time: 1000,
             isActive: true,
             imgSrc:'img/01.webp',
             altSrc:'Marvel\'s Spiderman Miles Morale',
@@ -33,6 +35,9 @@ createApp({
                 ]
         }
     },
+    mounthed(){
+        this.automatiCarousel();
+     },
     methods: {
         nextImg(){
             this.isActive = false;
@@ -60,11 +65,9 @@ createApp({
             this.textContent = this.slides[this.showedImg].text;
             this.titleContent = this.slides[this.showedImg].title;
             console.log(this.showedImg)
+        },
+        automatiCarousel(){
+            this.carousel = setInterval(this.nextImg, this.time);
         }
-    },
-    mounthed(){
-       setInterval(() =>{
-        nextImg()
-       },2000); 
     }
 }).mount('#app')
