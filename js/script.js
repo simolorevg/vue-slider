@@ -3,6 +3,7 @@ createApp({
     data(){
         return {
             showedImg : 0,
+            isActive: true,
             imgSrc:'img/01.webp',
             altSrc:'Marvel\'s Spiderman Miles Morale',
             textContent:'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
@@ -34,6 +35,7 @@ createApp({
     },
     methods: {
         nextImg(){
+            this.isActive = false;
             console.log('Stai cliccando next');
             if(this.showedImg < this.slides.length - 1){
                 this.showedImg++;
