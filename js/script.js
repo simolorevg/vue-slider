@@ -4,6 +4,7 @@ createApp({
         return {
             showedImg : 0,
             imgSrc:'img/01.webp',
+            altSrc:'Marvel\'s Spiderman Miles Morale',
             slides : [
                 {
                     image: 'img/01.webp',
@@ -38,15 +39,18 @@ createApp({
                 this.showedImg = 0;
             }
             this.imgSrc = this.slides[this.showedImg].image;
+            this.altSrc = this.slides[this.showedImg].title;
             console.log(this.showedImg)
         },
         prevImg(){
             console.log('Stai cliccando prev');
             if(this.showedImg === 0){
-                this.showedImg = this.slides.length;
+                this.showedImg = this.slides.length - 1;
             }else{
                 this.showedImg--;
             }
+            this.imgSrc = this.slides[this.showedImg].image;
+            this.altSrc = this.slides[this.showedImg].title;
             console.log(this.showedImg)
         }
     }
