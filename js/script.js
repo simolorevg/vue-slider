@@ -3,6 +3,7 @@ createApp({
     data(){
         return {
             showedImg : 0,
+            carousel: null,
             imgSrc:'img/01.webp',
             altSrc:'Marvel\'s Spiderman Miles Morale',
             textContent:'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
@@ -33,9 +34,7 @@ createApp({
         }
     },
     mounthed(){
-        setInterval(() => {
-           nextImg()
-          }, 2000)
+        this.automatiCarousel();
      },
     methods: {
         nextImg(){
@@ -64,6 +63,9 @@ createApp({
             this.textContent = this.slides[this.showedImg].text;
             this.titleContent = this.slides[this.showedImg].title;
             console.log(this.showedImg)
+        },
+        automatiCarousel(){
+            this.carousel = setInterval(this.nextImg,2000);
         }
     }
 }).mount('#app')
