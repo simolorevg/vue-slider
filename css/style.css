@@ -12,6 +12,7 @@
 }
 body{
     background-color: black;
+    font-family: 'Ubuntu', sans-serif;
 }
 .slider-wrapper{
     box-shadow: 10px 20px 20px white;
