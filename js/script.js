@@ -61,5 +61,10 @@ createApp({
             this.titleContent = this.slides[this.showedImg].title;
             console.log(this.showedImg)
         }
+    },
+    mounthed(){
+       setInterval(() =>{
+        nextImg()
+       },2000); 
     }
 }).mount('#app')
